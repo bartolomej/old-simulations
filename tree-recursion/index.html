@@ -1,0 +1,30 @@
+<div>
+    <h4 class="title">Recursive fractal tree</h4>
+    <div class="control-container" style="height: 110px;">
+        <div style="float: left">
+            Line length <br>
+            Line width <br>
+            Scale <br>
+            Angle <br>
+            Clear <br>
+            Color <br>
+        </div>
+        <div style="float: right">
+            <input type="range" min="10" max="150" value="50" class="slider" id="length-input"/><span id="length"></span><br>
+            <input type="range" min="10" max="400" value="100" class="slider" id="width-input"/><span id="width"></span><br>
+            <input type="range" min="10" max="75" value="40" class="slider" id="scale-input"/><span id="scale"></span><br>
+            <input type="range" min="10" max="75" value="40" class="slider" id="angle-input"/><span id="angle"></span><br>
+            <input type="checkbox" id="clear-input"/><br>
+            <input type="checkbox" id="color-input"/><br>
+        </div>
+        <!--
+        Line length:<input type="range" min="10" max="120" value="50" class="slider" id="length-input"/><span id="length"></span><br>
+        Line width:<input type="range" min="10" max="400" value="100" class="slider" id="width-input"/><span id="width"></span><br>
+        Scale:<input type="range" min="10" max="82" value="40" class="slider" id="scale-input"/><span id="scale"></span><br>
+        Angle:<input type="range" min="10" max="80" value="40" class="slider" id="angle-input"/><span id="angle"></span><br>
+        -->
+    </div>
+</div>
+
+<canvas style="width: 100%; height: 900px;" id="canvas"></canvas>
+<script src="./sketch.js"></script>
