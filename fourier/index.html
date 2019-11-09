@@ -1,23 +1,23 @@
-<div>
-    <h4 class="title">Fourier Series</h4>
-    <div class="control-container" style="height: 110px;">
-        <div style="float: left">
-            Sine waves <br>
-            Start f <br>
-            Next f <br>
-            Start r <br>
-            Next r <br>
-        </div>
-        <div style="float: right">
-            <input type="range" min="10" max="300" value="10" class="slider" id="sineN"/><span id="sineN"></span><br>
-            <input type="range" min="10" max="30" value="10" class="slider" id="startF"/><span id="startF"></span><br>
-            <input type="range" min="0" max="30" value="2" class="slider" id="nextF"/><span id="nextF"></span><br>
-            <input type="range" min="30" max="100" value="40" class="slider" id="startR"/><span id="startR"></span><br>
-            <input type="range" min="5" max="50" value="10" class="slider" id="nextR"/><span id="nextR"></span><br>
-            <button id="update">Update</button>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Old simulations index</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div id="container">
+    <div id="controls">
+        <pre>
+Sine waves <input type="range" min="10" max="300" value="10" class="slider" id="sineN"/><span id="sineN"></span><br>
+Start      <input type="range" min="10" max="30" value="10" class="slider" id="startF"/><span id="startF"></span><br>
+Next f     <input type="range" min="0" max="30" value="2" class="slider" id="nextF"/><span id="nextF"></span><br>
+Start r    <input type="range" min="30" max="100" value="40" class="slider" id="startR"/><span id="startR"></span><br>
+Next r     <input type="range" min="5" max="50" value="10" class="slider" id="nextR"/><span id="nextR"></span><br>
+            </pre>
     </div>
+    <canvas id="canvas"></canvas>
 </div>
-
-<canvas id="canvas"></canvas>
 <script src="./sketch.js"></script>
+</body>
+</html>

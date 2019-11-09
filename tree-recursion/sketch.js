@@ -2,10 +2,13 @@ const lengthInput = document.getElementById('length-input');
 const widthInput = document.getElementById('width-input');
 const angleInput = document.getElementById('angle-input');
 const scaleInput = document.getElementById('scale-input');
-const clearInput = document.getElementById('clear-input');
-const colorInput = document.getElementById('color-input');
 let canvas = document.getElementById('canvas');
 let ctx = canvas.getContext('2d');
+
+let lineLength = 130;
+let lineWidth = 1.5;
+let angle = 70;
+let scale = 0.65;
 
 
 window.onload = function () {
@@ -14,6 +17,7 @@ window.onload = function () {
 
   read("mousemove");
   read("keydown");
+  updateDraw();
 };
 
 function read(eventType) {
@@ -27,7 +31,8 @@ function read(eventType) {
       document.getElementById('length').innerHTML = lengthInput.value;
       if (lengthInput.value !== prevLength) {
         updateDraw();
-        prevLength = lengthInput.value
+        prevLength = lengthInput.value;
+        lineLength = Number.parseInt(lengthInput.value);
       }
     });
   });
@@ -37,7 +42,8 @@ function read(eventType) {
       document.getElementById('width').innerHTML = widthInput.value;
       if (widthInput.value !== prevWidth) {
         updateDraw();
-        prevWidth = widthInput.value
+        prevWidth = widthInput.value;
+        lineWidth = Number.parseFloat(widthInput.value)/100;
       }
     });
   });
@@ -47,7 +53,8 @@ function read(eventType) {
       document.getElementById('angle').innerHTML = angleInput.value;
       if (angleInput.value !== prevAngle) {
         updateDraw();
-        prevAngle = angleInput.value
+        prevAngle = angleInput.value;
+        angle = Number.parseFloat(angleInput.value)/100;
       }
     });
   });
@@ -57,20 +64,9 @@ function read(eventType) {
       document.getElementById('scale').innerHTML = scaleInput.value;
       if (scaleInput.value !== prevScale) {
         updateDraw();
-        prevScale = scaleInput.value
+        prevScale = scaleInput.value;
+        scale = Number.parseFloat(scaleInput.value)/100;
       }
-    });
-  });
-
-  clearInput.addEventListener('change', () => {
-    window.requestAnimationFrame( () => {
-      updateDraw();
-    });
-  });
-
-  rotationInput.addEventListener('change', () => {
-    window.requestAnimationFrame( () => {
-      updateDraw();
     });
   });
 
@@ -78,19 +74,13 @@ function read(eventType) {
 
 
 function updateDraw() {
-  drawTree(ctx,
-    Number.parseFloat(angleInput.value)/100,
-    Number.parseFloat(scaleInput.value)/100,
-    Number.parseFloat(widthInput.value)/100,
-    Number.parseInt(lengthInput.value),
-    clearInput.checked,
-    colorInput.checked);
+  drawTree(ctx, angle, scale, lineWidth, lineLength);
 }
 
 
-function drawTree(ctx, angle, scale, width, length, clear = true, color = false) {
+function drawTree(ctx, angle, scale, width, length, color = false) {
   ctx.resetTransform();
-  if (clear) ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.translate(canvas.width/2, canvas.height/1.7);
   ctx.rotate(Math.PI);
   ctx.save();

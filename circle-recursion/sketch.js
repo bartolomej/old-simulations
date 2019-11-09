@@ -8,6 +8,11 @@ const colorInput = document.getElementById('color-input');
 let canvas = document.getElementById('canvas');
 let ctx = canvas.getContext('2d');
 
+let angle = 0.25;
+let scale = 0.52;
+let lineWidth = 1.56;
+let lineLength = 150;
+let rotation = 3.65;
 
 
 window.onload = function () {
@@ -16,6 +21,7 @@ window.onload = function () {
 
   read("mousemove");
   read("keydown");
+  updateDraw();
 };
 
 function read(event) {
@@ -30,7 +36,8 @@ function read(event) {
       document.getElementById('length').innerHTML = lengthInput.value;
       if (lengthInput.value !== prevLength) {
         updateDraw();
-        prevLength = lengthInput.value
+        prevLength = lengthInput.value;
+        lineLength = Number.parseInt(lengthInput.value);
       }
     });
   });
@@ -40,7 +47,8 @@ function read(event) {
       document.getElementById('width').innerHTML = widthInput.value;
       if (widthInput.value !== prevWidth) {
         updateDraw();
-        prevWidth = widthInput.value
+        prevWidth = widthInput.value;
+        lineWidth = Number.parseFloat(widthInput.value)/100;
       }
     });
   });
@@ -50,7 +58,8 @@ function read(event) {
       document.getElementById('angle').innerHTML = angleInput.value;
       if (angleInput.value !== prevAngle) {
         updateDraw();
-        prevAngle = angleInput.value
+        prevAngle = angleInput.value;
+        angle = Number.parseFloat(angleInput.value)/100;
       }
     });
   });
@@ -60,7 +69,8 @@ function read(event) {
       document.getElementById('scale').innerHTML = scaleInput.value;
       if (scaleInput.value !== prevScale) {
         updateDraw();
-        prevScale = scaleInput.value
+        prevScale = scaleInput.value;
+        scale = Number.parseFloat(scaleInput.value)/100;
       }
     });
   });
@@ -70,7 +80,8 @@ function read(event) {
       document.getElementById('rotation').innerHTML = rotationInput.value;
       if (rotationInput.value !== prevRotation) {
         updateDraw();
-        prevRotation = rotationInput.value
+        prevRotation = rotationInput.value;
+        rotation = Number.parseInt(rotationInput.value)/60;
       }
     });
   });
@@ -81,24 +92,11 @@ function read(event) {
     });
   });
 
-  rotationInput.addEventListener('change', () => {
-    window.requestAnimationFrame( () => {
-      updateDraw();
-    });
-  });
-
 }
 
 
 function updateDraw() {
-  drawFractalCircle(ctx,
-    Number.parseFloat(angleInput.value)/100,
-    Number.parseFloat(scaleInput.value)/100,
-    Number.parseFloat(rotationInput.value)/100,
-    Number.parseFloat(widthInput.value)/100,
-    Number.parseInt(lengthInput.value),
-    clearInput.checked,
-    colorInput.checked);
+  drawFractalCircle(ctx, angle, scale, rotation, lineWidth, lineLength, clearInput.checked, colorInput.checked);
 }
 
 function drawFractalCircle(ctx, angle, scale, rotation, width, length, clear = true, color = false) {

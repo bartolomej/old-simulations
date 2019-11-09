@@ -1,0 +1,16 @@
+#container {
+    height: 100vh;
+    display: flex;
+    flex: 3;
+    flex-direction: row;
+}
+
+#controls {
+    display: flex;
+    flex: 1;
+}
+
+#canvas {
+    display: flex;
+    flex: 2;
+}

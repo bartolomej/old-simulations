@@ -22,8 +22,7 @@ window.onload = function () {
       { r: 10, f: 0.28, t: 0 },
     ])
   });
-  //read("mousemove");
-  //read("keydown");
+  read("mousedown");
 };
 
 button.addEventListener('click', () => { updateDraw() });
