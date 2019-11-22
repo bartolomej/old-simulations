@@ -1,8 +1,7 @@
 #container {
     height: 100vh;
     display: flex;
-    flex: 3;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 #controls {

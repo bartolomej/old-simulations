@@ -1,0 +1,314 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat');
+}
+
+html {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	color: floralwhite;
+	color: inherit;
+	background-size: cover;
+	background-image: url("./wallpaper.jpg");
+}
+
+#navigation {
+	height: 35px;
+}
+
+#topnav {
+	vertical-align: middle;
+}
+
+#logo {
+	float: left;
+	display: inline;
+}
+
+.image {
+	border-radius: 8px;
+}
+
+.center {
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+div.nav-right {
+	float: right;
+	height: 50px;
+	vertical-align: middle;
+	line-height: 50px;
+	font-weight: 500;
+}
+
+div.nav-left {
+	float: left;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 50px;
+	font-weight: 500;
+}
+
+nav {
+	margin: 0.8em;
+	overflow: hidden;
+}
+
+nav a {
+	clear: none; display: inline; float: left; margin-left: 10px;
+	text-decoration: none;
+	list-style: none;
+	text-align: center;
+	padding-left: 5px;
+	padding-right: 5px;
+	color: inherit;
+	color: whitesmoke;
+	transition: 0.4s;
+}
+
+nav a:hover {
+	color: #ff4919;
+}
+
+ul {
+	list-style-type: none;
+	overflow: hidden;
+	margin: 0;
+	padding-left: 0;
+}
+
+li {
+	display: inline;
+}
+
+canvas {
+	outline: none;
+}
+
+.container {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.sup-body {
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.paragraph {
+	font-weight:300;
+	font-size: 0.9em;
+	color: floralwhite;
+	line-height: 1.9em;
+	text-align: center;
+	margin-bottom: 3em;
+}
+
+.main-title {
+	font-weight:700;
+	font-size: 2em;
+	color: floralwhite;
+	line-height: 2em;
+	text-align: center;
+	color: #ff4919;
+}
+
+#player{
+	text-align: center;
+	height: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#myModalLink {
+    text-decoration: underline;
+    color: white;
+    font-weight: bold;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal Header */
+.modal-header {
+    padding: 2px 16px;
+    background-color: #22272B;
+    color: white;
+}
+
+/* Modal Body */
+.modal-body {padding: 2px 16px;}
+
+/* Modal Footer */
+.modal-footer {
+    padding: 2px 7px;
+    background-color: #22272B;
+    color: white;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+@media screen and (max-width: 700px) {
+
+	.container {
+		width: 100%;
+	}
+
+	.sup-body {
+		width: 90%;
+	}
+
+	nav {
+		margin: 0.7em;
+		float: none;
+
+	}
+
+	.nav-left {
+		width: 100%;
+	}
+
+	#logo {
+		float: none;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	div.nav-right {
+		line-height: 1.3em;
+		float: left;
+		width: 100%;
+		height: 100px;
+	}
+
+	.nav-right ul {
+		float: none;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+	.nav-right li a {
+		float: none;
+		display: block;
+		text-decoration: none;
+	}
+
+	img#logo {
+		float: none;
+		text-align: center;
+		line-height: 20px;
+		padding: 0;
+	}
+
+	#logo-title {
+		display: none;
+	}
+
+	div#main-left {
+		float: none;
+		max-width: 93%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	div#main-right {
+		float: none;
+		max-width: 95%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.main-title {
+		line-height: 1em;
+	}
+
+    /* Modal Content */
+    .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 0;
+        width: 90%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        animation-name: animatetop;
+        animation-duration: 0.4s
+    }
+}
+
+@media screed and (max-width: 300px) {
+
+	nav a {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+}
+
+
+
+/**JAKOB**/
+
+
+
+
+
+
+.main-body{
+	background-color: rgba(0,0,0,0.8);
+	padding:30px;
+	height:100%;
+	margin:20px 25% 0px 25%;
+	width:50%;
+}
+
+body, html{
+	margin:0;
+	height:100%;
+}
