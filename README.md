@@ -1,3 +1,5 @@
 # old-simulations
 
-Collection of older simulation / visualization projects from 2018.
+Small collection of older simulation / visualization coding projects from 2018.
+
+Coded by [Bartolomej](https://github.com/bartolomej)
