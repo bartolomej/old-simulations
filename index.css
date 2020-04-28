@@ -4,11 +4,22 @@ body {
 
 #container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+}
+
+@media (max-width: 700px) {
+	#container {
+		flex-direction: column;
+	}
+}
+
+#container div {
+	display: flex;
+	flex-direction: column;
 	align-items: center;
 }
 
-#container > a {
+#container a {
 	text-align: start;
 	text-decoration: none;
 	border: 2px solid black;
@@ -16,23 +27,23 @@ body {
 	border-radius: 15px;
 	padding: 10px;
 	margin: 10px 0;
-	width: 30%;
+	width: 60%;
 }
 
-#container > a:hover {
+#container a:hover {
 	border: 2px solid palevioletred;
 }
 
-#container > a > h3 {
+#container a > h3 {
 	color: black;
 }
 
-#container > a > p {
+#container a > p {
 	color: grey;
 }
 
 @media (max-width: 800px) {
-	#container > a {
+	#container a {
 		width: 90%;
 		text-align: center;
 	}
